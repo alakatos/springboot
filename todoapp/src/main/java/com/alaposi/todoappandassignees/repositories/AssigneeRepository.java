@@ -12,4 +12,6 @@ public interface AssigneeRepository extends CrudRepository<Assignee, Long> {
 
   @Query(value = "select * FROM Todo t WHERE t.action Like :partOfAction", nativeQuery = true)
   List<Todo> findTodoByActionNamePart(@Param("partOfAction") String searched);
+  
+  Iterable<Assignee> findAllById(Iterable<Long> ids);
 }
